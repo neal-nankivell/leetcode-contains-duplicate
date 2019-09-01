@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Answer
 {
@@ -12,7 +13,18 @@ namespace Answer
          */
         public bool ContainsDuplicate(int[] nums)
         {
-            throw new NotImplementedException();
+            var hashSet = new HashSet<int>();
+
+            foreach (var num in nums)
+            {
+                if (hashSet.Contains(num))
+                {
+                    return true;
+                }
+                hashSet.Add(num);
+            }
+
+            return false;
         }
     }
 }
